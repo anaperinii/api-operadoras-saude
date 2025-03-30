@@ -1,0 +1,84 @@
+{
+    "info": {
+      "_postman_id": "a1b2c3d4-e5f6-7890",
+      "name": "Operadoras Saúde API",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Teste CORS (OPTIONS)",
+        "request": {
+          "method": "OPTIONS",
+          "header": [
+            {
+              "key": "Origin",
+              "value": "http://localhost:8086"
+            }
+          ],
+          "url": {
+            "raw": "{{base_url}}/buscar_operadoras",
+            "host": ["{{base_url}}"],
+            "path": ["buscar_operadoras"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Busca por Termo",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "{{base_url}}/buscar_operadoras?termo=SUL",
+            "host": ["{{base_url}}"],
+            "path": ["buscar_operadoras"],
+            "query": [
+              {
+                "key": "termo",
+                "value": "SUL"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Busca por CNPJ",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "{{base_url}}/buscar_operadoras?termo=471845",
+            "host": ["{{base_url}}"],
+            "path": ["buscar_operadoras"],
+            "query": [
+              {
+                "key": "termo",
+                "value": "471845"
+              }
+            ]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Termo Inválido",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "{{base_url}}/buscar_operadoras?termo=a",
+            "host": ["{{base_url}}"],
+            "path": ["buscar_operadoras"],
+            "query": [
+              {
+                "key": "termo",
+                "value": "a"
+              }
+            ]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
